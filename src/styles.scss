@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@use './assets/css/abstracts/index' as abstracts;
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+// * {
+//     font-family: 'Merriweather', serif;
+// }
+
+.auto-y {
+    display: flex;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Merriweather', serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.font-2 {
+    font-family: 'Great Vibes', cursive;
+}
