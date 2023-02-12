@@ -1,0 +1,12 @@
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+}

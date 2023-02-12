@@ -1,2 +1,19 @@
-<app-hero></app-hero>
-<app-about></app-about>
+<div class="container pt-5">
+    <ul>
+        <li *ngFor="let item of foods">
+            <img src="{{item.imageUrl}}" alt="">
+            <h2>{{item.name}}</h2>
+            <star-rating [value]="item.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="24px"
+                [readonly]="false">
+            </star-rating>
+            <div>
+                <ul>
+                    <li *ngFor="let origin of item.origins">
+                        {{origin}}
+                    </li>
+                </ul>
+            </div>
+            <h4>{{item.price | currency}}</h4>
+        </li>
+    </ul>
+</div>
