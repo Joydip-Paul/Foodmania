@@ -1,12 +1,51 @@
-ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+.food-item {
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
 
-    img {
-        width: 200px;
+    figure {
+        width: 100%;
         height: 200px;
-        object-fit: cover;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        h2 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #212121;
+        }
+
+        .origin {
+            display: flex;
+            gap: 10px;
+
+            p {
+                color: #333333;
+
+                span {
+                    display: inline-flex;
+                    color: #333333;
+                }
+            }
+
+        }
+
+        .price-star {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333333;
+        }
     }
 }

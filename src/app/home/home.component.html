@@ -1,19 +1,24 @@
 <div class="container pt-5">
-    <ul>
-        <li *ngFor="let item of foods">
-            <img src="{{item.imageUrl}}" alt="">
-            <h2>{{item.name}}</h2>
-            <star-rating [value]="item.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="24px"
-                [readonly]="false">
-            </star-rating>
-            <div>
-                <ul>
-                    <li *ngFor="let origin of item.origins">
-                        {{origin}}
-                    </li>
-                </ul>
-            </div>
-            <h4>{{item.price | currency}}</h4>
-        </li>
-    </ul>
+    <app-search></app-search>
+    <div class="row">
+        <div class="col-md-4 pb-4" *ngFor="let item of foods">
+            <a class="food-item">
+                <figure>
+                    <img src="{{item.imageUrl}}" alt="">
+                </figure>
+                <div class="content">
+                    <h2>{{item.name}}</h2>
+                    <div class="origin">
+                        <p>Origin: </p><span *ngFor="let origin of item.origins">{{origin}}</span>
+                    </div>
+                    <div class="price-star">
+                        <h4>{{item.price | currency}}</h4>
+                        <star-rating [value]="item.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black"
+                            size="24px" [readonly]="false">
+                        </star-rating>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

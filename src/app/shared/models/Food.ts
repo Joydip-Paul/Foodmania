@@ -1,7 +1,4 @@
 export class Food {
-    // constructor(id: number) {
-    //     this.id = id;
-    // }
     id!: number;
     name!: String;
     price!: number;
