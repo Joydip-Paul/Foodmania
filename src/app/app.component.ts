@@ -7,4 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'foodmania';
+
+  constructor() {
+  }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Food } from './../../shared/models/Food';
+import { Tag } from './../../shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,25 @@ import { Food } from './../../shared/models/Food';
 export class FoodService {
 
   constructor() { }
+
+  getAllTags(): Tag[] {
+    return [
+      { name: "ALl", count: 14 },
+      { name: "FastFood", count: 4 },
+      { name: "Lunch", count: 3 },
+      { name: "Dinner", count: 2 },
+      { name: "Buffet", count: 9 },
+      { name: "Tea", count: 5 },
+    ]
+
+  }
+
+  getAllFoodsByTag(tag: string): Food[] {
+    if (tag == "All")
+      return this.getAll();
+    else
+      return this.getAll().filter(food => food.tags?.includes(tag))
+  }
 
   getAll(): Food[] {
     return [
@@ -19,7 +39,7 @@ export class FoodService {
         origins: ['italy'],
         stars: 4.5,
         imageUrl: '/assets/images/food-1.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        tags: ['Pizza', 'Lunch'],
       },
       {
         id: 2,
@@ -41,7 +61,7 @@ export class FoodService {
         origins: ['italy'],
         stars: 4.5,
         imageUrl: '/assets/images/food-3.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        tags: ['Pizza', 'Lunch'],
       },
       {
         id: 4,
@@ -52,7 +72,7 @@ export class FoodService {
         origins: ['italy', 'Mexican'],
         stars: 4.5,
         imageUrl: '/assets/images/food-5.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        tags: ['FastFood', 'Pizza'],
       },
       {
         id: 4,
@@ -63,7 +83,7 @@ export class FoodService {
         origins: ['italy'],
         stars: 4.5,
         imageUrl: '/assets/images/food-6.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        tags: ['FastFood', 'Lunch'],
       },
     ]
   }
